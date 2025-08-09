@@ -1,0 +1,5 @@
+//This is the Solution for the LeetCode Question (231) Power of Two in Python3
+
+class Solution:
+    def isPowerOfTwo(self, n: int) -> bool:
+        return n > 0 and (n & (n - 1)) == 0
