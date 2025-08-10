@@ -1,0 +1,16 @@
+869. Reordered Power of 2
+//This is the Solution for the LeetCode Question (869) Reordered Power of 2 in Python3 
+
+class Solution:
+    def reorderedPowerOf2(self, n: int) -> bool:
+        # helper function to get digit signature
+        def signature(x: int) -> str:
+            return ''.join(sorted(str(x)))
+        
+        sig_n = signature(n)  # signature of n
+        
+        # Check against all powers of 2 up to 2^30
+        for k in range(31):
+            if sig_n == signature(1 << k):
+                return True  # found a matching power of 2
+        return False  # no match found
